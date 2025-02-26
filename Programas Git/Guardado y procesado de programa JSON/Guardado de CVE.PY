@@ -34,14 +34,10 @@ def extraer_info_relevante(cve_data):
         cve_id = cve_data['cveMetadata']['cveId']
         descripcion = cve_data['containers']['cna']['descriptions'][0]['value']
         fecha_publicacion = cve_data['cveMetadata']['datePublished']
-
-        # Aquí puedes extraer más campos si los necesitas
-
         return {
             'cve_id': cve_id,
             'descripcion': descripcion,
             'fecha_publicacion': fecha_publicacion,
-            # ... otros campos ...
         }
     except (KeyError, IndexError) as e:
         print(f"No se han encontrado palabras claves en el CVE: {cve_data['cveMetadata']['cveId']}")
