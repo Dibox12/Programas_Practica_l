@@ -35,7 +35,7 @@ def cargar_issues_desde_json(nombre_archivo):
 # --- Función para limpiar el texto ---
 
 def limpiar_texto(texto):
-    if isinstance(texto, str):  # Verificar si es una cadena
+    if isinstance(texto, str):  
         texto = texto.lower()
         texto = re.sub(r'<.*?>', '', texto)  # Eliminar etiquetas HTML
         texto = re.sub(r'http\S+', '', texto)  # Eliminar URLs
@@ -43,7 +43,7 @@ def limpiar_texto(texto):
         texto = re.sub(r'\s+', ' ', texto).strip()  # Eliminar espacios en blanco adicionales
         return texto
     else:
-        return ""  # Retorna una cadena vacía si no es un string
+        return ""  
 
 # --- Función para eliminar stop words (opcional) ---
 
@@ -57,7 +57,7 @@ def eliminar_stopwords(texto, stop_words):
 def tokenizar(texto):
     return nltk.word_tokenize(texto)
 
-# --- Función para etiquetar los datos (ejemplo) ---
+# --- Función para etiquetar los datos ---
 
 def etiquetar_datos(cve_descripcion, issue_descripcion):
     palabras_clave_vulnerabilidad = ["vulnerability", "security", "exploit", "attack", "cve", "quantum"]
@@ -73,7 +73,7 @@ def etiquetar_datos(cve_descripcion, issue_descripcion):
 # --- Programa principal ---
 if __name__ == "__main__":
     # Cargar los datos de CVEs
-    cves = cargar_cves_desde_json("cves_encontrados.json")
+    cves = cargar_cves_desde_json("cves_encontrados.json") # Actualizar con nombre correspondiente
     if cves:
         df_cves = pd.DataFrame(cves)
     else:
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         exit()
 
     # Cargar los datos de issues
-    issues = cargar_issues_desde_json("cp2k_cp2k_issues.json") # ¡Nombre de archivo actualizado!
+    issues = cargar_issues_desde_json("cp2k_cp2k_issues.json") # Actualizar con nombre correspondiente
     if issues:
         df_issues = pd.DataFrame(issues)
     else:
@@ -99,11 +99,11 @@ if __name__ == "__main__":
     # --- Limpieza de texto ---
     df['descripcion_limpia'] = df['description'].apply(limpiar_texto)
 
-    # --- Eliminar stop words (opcional) ---
+    # --- Eliminar stop words ---
     stop_words = set(stopwords.words('english')) #Utilizar stop words en ingles
     df['descripcion_limpia'] = df['descripcion_limpia'].apply(lambda x: eliminar_stopwords(x, stop_words))
 
-    # --- Tokenización (opcional) ---
+    # --- Tokenización (opcional) --- Esta parte ya es opcional
     # df['descripcion_tokenizada'] = df['descripcion_limpia'].apply(tokenizar)
 
     # --- Etiquetado de datos ---
@@ -123,6 +123,7 @@ if __name__ == "__main__":
     X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42, stratify=y_temp)
 
     # --- Implementación y evaluación de modelos ---
+    
     # Ejemplo con Regresión Logística:
     model = LogisticRegression(max_iter=1000, random_state=42, class_weight='balanced')
     model.fit(X_train, y_train)
@@ -132,7 +133,6 @@ if __name__ == "__main__":
     print(classification_report(y_val, y_pred))
     print(confusion_matrix(y_val, y_pred))
 
-    # --- Implementación y evaluación de modelos ---
     # Ejemplo con SVM:
     model = SVC(random_state=42)
     model.fit(X_train, y_train)
@@ -142,7 +142,6 @@ if __name__ == "__main__":
     print(classification_report(y_val, y_pred))
     print(confusion_matrix(y_val, y_pred))
 
-    # --- Implementación y evaluación de modelos ---
     # Ejemplo con Naive Bayes:
     model = MultinomialNB()
     model.fit(X_train, y_train)
@@ -152,7 +151,6 @@ if __name__ == "__main__":
     print(classification_report(y_val, y_pred))
     print(confusion_matrix(y_val, y_pred))
 
-    # --- Implementación y evaluación de modelos ---
     # Ejemplo con Random Forest:
     model = RandomForestClassifier(random_state=42)
     model.fit(X_train, y_train)
