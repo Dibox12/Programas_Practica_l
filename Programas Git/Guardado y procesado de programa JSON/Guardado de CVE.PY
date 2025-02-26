@@ -3,15 +3,6 @@ import os
 import re
 
 def leer_cve(ruta_archivo):
-    """
-    Lee un archivo JSON con la información de un CVE.
-
-    Args:
-        ruta_archivo: La ruta al archivo JSON del CVE.
-
-    Returns:
-        Un diccionario con los datos del CVE, o None si hay un error.
-    """
     try:
         with open(ruta_archivo, 'r', encoding='utf-8') as f:
             cve_data = json.load(f)
@@ -21,15 +12,6 @@ def leer_cve(ruta_archivo):
         return None
 
 def extraer_info_relevante(cve_data):
-    """
-    Extrae la información relevante de un diccionario CVE.
-
-    Args:
-        cve_data: Un diccionario con la información de un CVE.
-
-    Returns:
-        Un diccionario con la información relevante del CVE.
-    """
     try:
         cve_id = cve_data['cveMetadata']['cveId']
         descripcion = cve_data['containers']['cna']['descriptions'][0]['value']
