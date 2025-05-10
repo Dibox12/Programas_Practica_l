@@ -1,0 +1,67 @@
+[
+    {
+        "cve_id": "CVE-2024-1277",
+        "descripcion": "The Ocean Extra plugin for WordPress is vulnerable to Stored Cross-Site Scripting via custom fields in all versions up to, and including, 2.2.4 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor access or higher, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+        "fecha_publicacion": "2024-02-20T18:56:31.459Z"
+    },
+    {
+        "cve_id": "CVE-2024-29032",
+        "descripcion": "Qiskit IBM Runtime is an environment that streamlines quantum computations and provides optimal implementations of the Qiskit quantum computing SDK. Starting in version 0.1.0 and prior to version 0.21.2, deserializing json data using `qiskit_ibm_runtime.RuntimeDecoder` can lead to arbitrary code execution given a correctly formatted input string. Version 0.21.2 contains a fix for this issue.",
+        "fecha_publicacion": "2024-03-20T20:30:38.954Z"
+    },
+    {
+        "cve_id": "CVE-2024-29916",
+        "descripcion": "The dormakaba Saflok system before the November 2023 software update allows an attacker to unlock arbitrary doors at a property via forged keycards, if the attacker has obtained one active or expired keycard for the specific property, aka the \"Unsaflok\" issue. This occurs, in part, because the key derivation function relies only on a UID. This affects, for example, Saflok MT, and the Confidant, Quantum, RT, and Saffire series.",
+        "fecha_publicacion": "2024-03-21T00:00:00"
+    },
+    {
+        "cve_id": "CVE-2024-29922",
+        "descripcion": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Quantum Cloud Slider Hero allows Stored XSS.This issue affects Slider Hero: from n/a through 8.6.1.\n\n",
+        "fecha_publicacion": "2024-03-27T07:19:04.502Z"
+    },
+    {
+        "cve_id": "CVE-2024-36405",
+        "descripcion": "liboqs is a C-language cryptographic library that provides implementations of post-quantum cryptography algorithms. A control-flow timing lean has been identified in the reference implementation of the Kyber key encapsulation mechanism when it is compiled with Clang 15-18 for `-Os`, `-O1`, and other compilation options. A proof-of-concept local attack on the reference implementation leaks the entire ML-KEM 512 secret key in ~10 minutes using end-to-end decapsulation timing measurements. The issue has been fixed in version 0.10.1. As a possible workaround, some compiler options may produce vectorized code that does not leak secret information, however relying on these compiler options as a workaround may not be reliable.",
+        "fecha_publicacion": "2024-06-10T12:47:17.934Z"
+    },
+    {
+        "cve_id": "CVE-2024-37305",
+        "descripcion": "oqs-provider is a provider for the OpenSSL 3 cryptography library that adds support for post-quantum cryptography in TLS, X.509, and S/MIME using post-quantum algorithms from liboqs. Flaws have been identified in the way oqs-provider handles lengths decoded with DECODE_UINT32 at the start of serialized hybrid (traditional + post-quantum) keys and signatures. Unchecked length values are later used for memory reads and writes; malformed input can lead to crashes or information leakage. Handling of plain/non-hybrid PQ key operation is not affected. This issue has been patched in in v0.6.1. All users are advised to upgrade. There are no workarounds for this issue.",
+        "fecha_publicacion": "2024-06-17T19:42:22.091Z"
+    },
+    {
+        "cve_id": "CVE-2024-37489",
+        "descripcion": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in OceanWP Ocean Extra allows Stored XSS.This issue affects Ocean Extra: from n/a through 2.2.9.",
+        "fecha_publicacion": "2024-07-21T07:29:27.153Z"
+    },
+    {
+        "cve_id": "CVE-2024-3167",
+        "descripcion": "The Ocean Extra plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘twitter_username’ parameter in versions up to, and including, 2.2.6 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+        "fecha_publicacion": "2024-04-09T18:59:11.350Z"
+    },
+    {
+        "cve_id": "CVE-2024-54137",
+        "descripcion": "liboqs is a C-language cryptographic library that provides implementations of post-quantum cryptography algorithms. A correctness error has been identified in the reference implementation of the HQC key encapsulation mechanism. Due to an indexing error, part of the secret key is incorrectly treated as non-secret data. This results in an incorrect shared secret value being returned when the decapsulation function is called with a malformed ciphertext. This vulnerability is fixed in 0.12.0.",
+        "fecha_publicacion": "2024-12-06T16:00:58.061Z"
+    },
+    {
+        "cve_id": "CVE-2024-5168",
+        "descripcion": "Improper access control vulnerability in Prodys' Quantum Audio codec affecting versions 2.3.4t and below. This vulnerability could allow an unauthenticated user to bypass authentication entirely and execute arbitrary API requests against the web application.",
+        "fecha_publicacion": "2024-05-23T13:04:19.049Z"
+    },
+    {
+        "cve_id": "CVE-2024-5531",
+        "descripcion": "The Ocean Extra plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the Flickr widget in all versions up to, and including, 2.2.8 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+        "fecha_publicacion": "2024-06-11T08:32:39.244Z"
+    },
+    {
+        "cve_id": "CVE-2024-6618",
+        "descripcion": "In Ocean Data Systems Dream Report, a path traversal vulnerability could allow an attacker to perform remote code execution through the injection of a malicious dynamic-link library (DLL).",
+        "fecha_publicacion": "2024-08-13T16:37:41.654Z"
+    },
+    {
+        "cve_id": "CVE-2024-6619",
+        "descripcion": "In Ocean Data Systems Dream Report, an incorrect permission vulnerability could allow a local unprivileged attacker to escalate their privileges and could cause a denial-of-service.",
+        "fecha_publicacion": "2024-08-13T16:41:03.858Z"
+    }
+]

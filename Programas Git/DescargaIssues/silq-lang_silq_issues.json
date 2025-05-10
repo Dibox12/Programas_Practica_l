@@ -1,0 +1,448 @@
+[
+    {
+        "number": 35,
+        "title": "Having troubles with running shor.slq (VS Code extension)",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/35",
+        "description": "I was trying to test the script, however, I cannot execute it. \r\n\r\nAfter attempting a run via the terminal, I received the following output:\r\nlq shor.slq --run\r\nobject.Exception@ast/declaration.d(106): TODO\r\n----------------\r\n??:? _D3std9exception__T7bailOutHTC9ExceptionZQwFNaNfAyamMAxaZNn [0x55f6eef3b5ae]\r\n??:? pure @safe bool std.exception.enforce!().enforce!(bool).enforce(bool, lazy const(char)[], immutable(char)[], ulong) [0x55f6eef3b526]\r\n??:? ast.declaration.FunctionDef ast.declaration.FunctionDef.copyImpl(ast.expression.Expression.CopyArgs) [0x55f6eee224a0]\r\n??:? ast.expression.Expression ast.expression.Expression.copy!(ast.expression.Expression).copy(ast.expression.Expression.CopyArgs) [0x55f6eee3e0b4]\r\n??:? ast.expression.Expression ast.expression.CompoundExp.copyImpl(ast.expression.Expression.CopyArgs).__lambda2!(ast.expression.Expression).__lambda2(ast.expression.Expression) [0x55f6eee3f034]\r\n??:? @property ast.expression.Expression std.algorithm.iteration.MapResult!(ast.expression.CompoundExp.copyImpl(ast.expression.Expression.CopyArgs).__lambda2, ast.expression.Expression[]).MapResult.front() [0x55f6eee3f144]\r\n??:? ast.expression.Expression[] std.array.array!(std.algorithm.iteration.MapResult!(ast.expression.CompoundExp.copyImpl(ast.expression.Expression.CopyArgs).__lambda2, ast.expression.Expression[]).MapResult).array(std.algorithm.iteration.MapResult!(ast.expression.CompoundExp.copyImpl(ast.expression.Expression.CopyArgs).__lambda2, ast.expression.Expression[]).MapResult) [0x55f6eefdef3a]\r\n??:? ast.expression.CompoundExp ast.expression.CompoundExp.copyImpl(ast.expression.Expression.CopyArgs) [0x55f6eee2d847]\r\n??:? ast.expression.CompoundExp ast.expression.Expression.copy!(ast.expression.CompoundExp).copy(ast.expression.Expression.CopyArgs) [0x55f6eee3e270]\r\n??:? ast.expression.Expression ast.semantic_.statementSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeef61dc]\r\n??:? ast.expression.CompoundExp ast.semantic_.compoundExpSemantic(ast.expression.CompoundExp, ast.scope_.Scope, ast.type.Annotation) [0x55f6eeef7210]\r\n??:? ast.declaration.FunctionDef ast.semantic_.functionDefSemantic(ast.declaration.FunctionDef, ast.scope_.Scope) [0x55f6eef08e12]\r\n??:? ast.expression.Expression ast.semantic_.typeForDecl(ast.declaration.Declaration) [0x55f6eef0a923]\r\n??:? ast.expression.Expression ast.semantic_.expressionSemantic(ast.expression.Expression, ast.scope_.Scope, ast.semantic_.ConstResult, ast.semantic_.InType) [0x55f6eef00cd6]\r\n??:? ast.expression.Expression ast.semantic_.callSemantic(ast.expression.CallExp, ast.scope_.Scope, ast.semantic_.ConstResult, ast.semantic_.InType) [0x55f6eeefce02]\r\n??:? ast.expression.Expression ast.semantic_.expressionSemantic(ast.expression.Expression, ast.scope_.Scope, ast.semantic_.ConstResult, ast.semantic_.InType) [0x55f6eef0060e]\r\n??:? ast.expression.Expression ast.semantic_.defineSemantic(ast.expression.BinaryExp!(79).BinaryExp, ast.scope_.Scope) [0x55f6eeef7d3c]\r\n??:? ast.expression.Expression ast.semantic_.defineOrAssignSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeefcc2b]\r\n??:? ast.expression.Expression ast.semantic_.statementSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeef5997]\r\n??:? ast.expression.CompoundExp ast.semantic_.compoundExpSemantic(ast.expression.CompoundExp, ast.scope_.Scope, ast.type.Annotation) [0x55f6eeef7210]\r\n??:? ast.expression.Expression ast.semantic_.statementSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeef6224]\r\n??:? ast.expression.CompoundExp ast.semantic_.compoundExpSemantic(ast.expression.CompoundExp, ast.scope_.Scope, ast.type.Annotation) [0x55f6eeef7210]\r\n??:? ast.declaration.FunctionDef ast.semantic_.functionDefSemantic(ast.declaration.FunctionDef, ast.scope_.Scope) [0x55f6eef08e12]\r\n??:? ast.expression.Expression ast.semantic_.typeForDecl(ast.declaration.Declaration) [0x55f6eef0a923]\r\n??:? ast.expression.Expression ast.semantic_.expressionSemantic(ast.expression.Expression, ast.scope_.Scope, ast.semantic_.ConstResult, ast.semantic_.InType) [0x55f6eef00cd6]\r\n??:? ast.expression.Expression ast.semantic_.callSemantic(ast.expression.CallExp, ast.scope_.Scope, ast.semantic_.ConstResult, ast.semantic_.InType) [0x55f6eeefce02]\r\n??:? ast.expression.Expression ast.semantic_.expressionSemantic(ast.expression.Expression, ast.scope_.Scope, ast.semantic_.ConstResult, ast.semantic_.InType) [0x55f6eef0060e]\r\n??:? ast.expression.Expression ast.semantic_.defineSemantic(ast.expression.BinaryExp!(79).BinaryExp, ast.scope_.Scope) [0x55f6eeef7d3c]\r\n??:? ast.expression.Expression ast.semantic_.defineOrAssignSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeefcc2b]\r\n??:? ast.expression.Expression ast.semantic_.statementSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeef5997]\r\n??:? ast.expression.CompoundExp ast.semantic_.compoundExpSemantic(ast.expression.CompoundExp, ast.scope_.Scope, ast.type.Annotation) [0x55f6eeef7210]\r\n??:? ast.declaration.FunctionDef ast.semantic_.functionDefSemantic(ast.declaration.FunctionDef, ast.scope_.Scope) [0x55f6eef08e12]\r\n??:? ast.expression.Expression ast.semantic_.toplevelSemantic(ast.expression.Expression, ast.scope_.Scope) [0x55f6eeef4351]\r\n??:? ast.expression.Expression[] ast.semantic_.semantic(ast.expression.Expression[], ast.scope_.Scope) [0x55f6eeef4283]\r\n??:? int ast.semantic_.importModule(immutable(char)[], ast.error.ErrorHandler, out ast.expression.Expression[], out ast.scope_.TopScope, ast.lexer.Location) [0x55f6eeef3322]\r\n??:? int silq.run(immutable(char)[]) [0x55f6eedf84eb]\r\n??:? _Dmain [0x55f6eedf96df]",
+        "labels": [],
+        "created_at": "2023-09-04T16:35:15Z",
+        "updated_at": "2023-09-05T13:44:36Z",
+        "closed_at": "2023-09-05T13:44:35Z",
+        "user": "v-bezganovic"
+    },
+    {
+        "number": 34,
+        "title": "Please elaborate the process to install silq in any arch linux derivative(specifically needed for blackarch linux).",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/34",
+        "description": "I am unable to install silq in my Blackarch Linux OS. I want to install it in terminal since I don't use any IDE's. I code in vim through terminal and then compile or interpret it with respective compiler or interpreter of the concerned language. Here, I want to do the same. Please tell me the steps to install in it my terminal and run it through commands as I request.\r\n",
+        "labels": [],
+        "created_at": "2022-04-18T06:39:22Z",
+        "updated_at": "2022-10-21T00:12:58Z",
+        "closed_at": "2022-10-21T00:12:57Z",
+        "user": "SK-099"
+    },
+    {
+        "number": 33,
+        "title": "Please make a seperate package of silq for arch linux and it's derivatives",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/33",
+        "description": "Having problem to install silq from scratch using terminal in blackarch linux(a derivate of arch linux). Please give a solution to solve the issue.",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2022-04-18T05:52:51Z",
+        "updated_at": "2022-10-11T21:34:42Z",
+        "closed_at": null,
+        "user": "SK-099"
+    },
+    {
+        "number": 32,
+        "title": "Add a Dockerfile to support silq in a container",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/pull/32",
+        "description": "This PR adds a Silq Dockerfile to support running Silq experiments inside of a container. It doesn't add anything to the overhead of the codebase, and clones the latest from this repository when built (i.e., is not version-pinned, but will always be up-to-date).\r\n\r\nI have been using this for a little while and saw #24, and thought I'd contribute. Feel free to close if you prefer not to have this in the repository! ",
+        "labels": [],
+        "created_at": "2021-12-01T04:54:04Z",
+        "updated_at": "2024-10-10T02:36:37Z",
+        "closed_at": null,
+        "user": "j6k4m8"
+    },
+    {
+        "number": 31,
+        "title": "Variable quantum state assignment",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/31",
+        "description": "Hey again 👋🏻\r\n\r\nJust wanted to ask, how Silq manages to handle Variables. As far as I know, quantum states cannot be stored inside a variable since the measurement will trigger a mirror-state.\r\n\r\nBest regards\r\nTimo Sarkar\r\n\r\nZug, Switzerland",
+        "labels": [
+            "documentation"
+        ],
+        "created_at": "2021-11-22T17:05:06Z",
+        "updated_at": "2021-11-25T15:39:31Z",
+        "closed_at": "2021-11-25T15:39:30Z",
+        "user": "sartimo"
+    },
+    {
+        "number": 30,
+        "title": "Is there any way to do actual things besides mathematical computation with silq?",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/30",
+        "description": "Hello,\r\n\r\nPlease forgive my foolish title phrasing.\r\n\r\nI am inquiring about what I must go through in order to build real world applications with silq (theoretically). Suppose I wanted to implement a library for controlling audio on a device. Hopefully it would both work on my laptop and any theoretical quantum computer supporting the syscalls. I don't see much in terms of a virtual machine with these implemented like with the JVM or anything. I don't know much about quantum computing or the technologies that silq is built upon but am interested to learn more.\r\n\r\nIs it at all possible to interact with hardware instead doing computation in a very abstract way?\r\n\r\nSincerely, Walther Green",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-11-21T23:58:24Z",
+        "updated_at": "2021-11-30T15:49:52Z",
+        "closed_at": null,
+        "user": "Ktedon"
+    },
+    {
+        "number": 29,
+        "title": "Method for resetting Quantum State",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/29",
+        "description": "Is there a method for resetting the global state if there are no quantum variables? I am considering some code that requires a repeat until success loop and the quantum state needs to be reset at the start of the loop.\r\n\r\nExample with a minimal program:\r\n```\r\ndef main(){\r\n    loop := true:!B;\r\n    while (loop){\r\n        q := 0:B;\r\n        q := rotY(1,q);\r\n        q := rotZ(0.5,q);\r\n        loop = measure(q);\r\n    }\r\n    return loop;\r\n}\r\n```\r\n\r\nOn the first iteration, the quantum state is `(1+0i)·|⟩` or `(1+0i)·|0⟩` up to the rotation statements.\r\nOnce the rotations are done the quantum state is ` (0.850301-0.217117i)·|0⟩₂+(0.464521+0.118612i)·|1⟩₂`.\r\nNow if the measurement is `1` the quantum state becomes `(0.968912+0.247404i)·|⟩`, which leaks into the redefinition of `q` in the next iteration. The state is therefore `(0.968912+0.247404i)·|0⟩` rather than `(1+0i)·|0⟩`.\r\n\r\nBasically, I would be looking for something like:\r\n```\r\ndef main(){\r\n    loop := true:!B;\r\n    while (loop){\r\n        q := 0:B;\r\n        q := rotY(1,q);\r\n        q := rotZ(0.5,q);\r\n        loop = measure(q);\r\n        reset();\r\n    }\r\n    return loop;\r\n}\r\n```\r\nwhere `reset()` changes an empty quantum state back to `(1+0i)·|⟩`.",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-10-04T14:29:37Z",
+        "updated_at": "2021-10-04T15:33:21Z",
+        "closed_at": null,
+        "user": "marco-lewis"
+    },
+    {
+        "number": 28,
+        "title": "Quantum redefinition through quantum control behaviour inconsistent depending on scope",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/28",
+        "description": "TL;DR: Cannot redefine quantum variable under quantum control in a subroutine, but the quantum variable under quantum control can be redefined in the environment/scope it is defined in\r\n\r\nWhilst I have a more complex scenario, the behaviour also occurs in this simple example. Here is a program that takes a variable (q) and based on quantum control, changes the value:\r\n```\r\nn := 3;\r\n\r\ndef main(){\r\n    q := 1 :uint[n];\r\n    p := H(0:B);\r\n    if p {\r\n        q = 3:uint[n];\r\n    }\r\n    measure(p);\r\n    return q;\r\n}\r\n```\r\n\r\nThis is accepted in Silq and runs as expected (before measurement the state is ```1/sqrt(2) * (|1>|0> + |3>|1>)```). This is helpful for generating oracles as you can just tell Silq what value you want the variable to take based on classical variables and there is no need to explicitly define all the operations that need to take place for the new value.\r\n\r\nIn one of my programs, I want to avoid code duplication and would like to put the if statement into a function and replace the ```if``` statement in ```main``` with ```q := func(p, q)```. However, an error occurs when doing so:\r\n```\r\ndef func(const p:B, q:uint[n]){\r\n    if p {\r\n        q = 3:uint[n];  // Error: cannot reassign quantum variable\r\n    }\r\n    return q;\r\n}\r\n```\r\n\r\nI do not think this error should occur.",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-09-07T09:37:07Z",
+        "updated_at": "2021-09-07T10:50:35Z",
+        "closed_at": null,
+        "user": "marco-lewis"
+    },
+    {
+        "number": 27,
+        "title": "Does measurement or consciousness determine quantum state? ",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/27",
+        "description": "I know it is not silq related question. I couldn't find a better place to ask the question. Hopefully, someone can help me with the question. Thanks in advance.\r\n\r\nI know quantum states are in super positions. But How do we know it is the measurement determines the quantum state ? Could it be consciousness ? For example, we use tool measure the state of the quantum particle, but no one checked the result. \r\n\r\nI cannot prove it. But I have an assumption. The our consciousness might determines the quantum state not the measurement.\r\n\r\nThis is big different with Schrödinger's cat experiment. \r\nCase 1: Measurement determines the quantum state.\r\nThen: When the device measures the radioactivity, then the quantum state is determined. So the state of cat is actually determined.\r\nCase 2: Consciousness determines the quantum state.\r\nThen: The measurement of radioactivity cannot determine the quantum state. So the cat is in superposition. The cat is alive and died at the same time.\r\n",
+        "labels": [
+            "off-topic"
+        ],
+        "created_at": "2021-08-22T01:33:01Z",
+        "updated_at": "2021-08-22T15:05:20Z",
+        "closed_at": "2021-08-22T14:57:22Z",
+        "user": "lindenquan"
+    },
+    {
+        "number": 26,
+        "title": "Function calls omitting variables in square brackets causes errors when reversing",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/26",
+        "description": "Variables in square brackets can be omitted in function calls if they can be derived from variables in the operation. For example:\r\n\r\n```\r\ndef op[n:!N](q:uint[n], anc:B){\r\n  for i in [0..n){\r\n    anc xorb=q[i];\r\n  }\r\n}\r\n\r\nn:=5;\r\n\r\ndef main(){\r\n  q := 0:uint[n];\r\n  anc := op(q, 0:B);\r\n  ...\r\n}\r\n```\r\n\r\nWhen reversing, omitting the square brackets causes an error:\r\n```\r\ndef main(){\r\n  q := 0:uint[n];\r\n  (q, anc) := op(q, 0:B);\r\n  (q, 0:B) := reverse(op)(q, anc); // Error\r\n  return q;\r\n}\r\n```\r\n\r\nA current workaround is to include the square brackets within the reverse call ```reverse(op[n])(...)```, but perhaps there is a way to avoid this.\r\n\r\n(I am currently using the vscode extension for Silq but not sure if this error occurs in other builds.)",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-08-16T11:54:06Z",
+        "updated_at": "2021-08-16T17:00:40Z",
+        "closed_at": "2021-08-16T17:00:40Z",
+        "user": "marco-lewis"
+    },
+    {
+        "number": 25,
+        "title": "Functions on arrays?",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/25",
+        "description": "Amazing job guys. Any reason the first snippet can't be written as the second one?\r\n\r\n1:\r\n```silq\r\n\tfor k in [0..n) { cand[k] := H(cand[k]);\r\n```\r\n\r\n2: \r\n```silq\r\n\tcand := H(cand);\r\n```\r\n\r\nIt's done in other languages like Python for example. Also your example for Grover's algorithm already does this in the circuit diagram! There's just one wire going into `Hⁿ`:\r\n\r\n![Grover's Algorithm from Silq website](https://silq.ethz.ch/assets/images/grover-circuit.svg)\r\n\r\nSo it would only be logical to implement in this language too, as Silq definitely attempts in giving a higher level of abstraction than building circuits and directly manipulating single bit registers. Again, great job on this, and I'll be eagerly waiting for when this language can export to some circuit format so we could play around with it on different systems, even maybe real ones.",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-07-04T11:38:53Z",
+        "updated_at": "2021-08-17T21:22:48Z",
+        "closed_at": null,
+        "user": "swooboo"
+    },
+    {
+        "number": 24,
+        "title": "Adding docker support",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/24",
+        "description": "Hello everyone 👋🏻\r\n\r\nI really admire your work. \r\n\r\nJust having a consideration to add support for distributing silq to docker environments.\r\n\r\nYour work is so amazing! Please keep it up, you are inspiring me!\r\n\r\nBest regards\r\n\r\nTimo Sarkar",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-05-24T18:04:07Z",
+        "updated_at": "2021-09-07T10:18:22Z",
+        "closed_at": null,
+        "user": "sartimo"
+    },
+    {
+        "number": 23,
+        "title": "Quantum Operation works on single qubits, but not on elements of different arrays",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/23",
+        "description": "I have a quantum gate, `W(a:B,b:B)`, which basically performs a bunch of `cnot` and controlled-`H` operations between the qubits. Neither of the variables are constant because they are each a target of some `cnot` operation.\r\n\r\nThe following program performs as expected:\r\n```\r\nx := 0:B;\r\ny := 1:B;\r\n[x, y] := W(x, y);\r\n```\r\n\r\nI would like to generalize this so that `x` and `y` are of type `uint[n]`, where I would perform the operation between pairs of qubits that share the same index. The following code, which looks like it could work, produces an error though:\r\n```\r\nx:=0:uint[n];\r\n\\\\ Do some stuff to x\r\ny:=0:uint[n];\r\n\\\\ Do some stuff to y\r\nfor i in [0..n){\r\n    [x[i], y[i]] := W(x[i], y[i]); \\\\Error: only swapping supported in permute statement\r\n}\r\n```\r\n\r\nIs there some functionality to do this already or is this a feature that could be added?\r\nI can work around this by moving the definition of `W` into the for loop and perform the operation directly, but if I need to perform `W` multiple times it would be easier to call the function.",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-04-22T09:22:22Z",
+        "updated_at": "2021-05-03T01:31:48Z",
+        "closed_at": "2021-05-03T01:24:22Z",
+        "user": "marco-lewis"
+    },
+    {
+        "number": 22,
+        "title": "fix expected md5sum value for osx",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/pull/22",
+        "description": "",
+        "labels": [],
+        "created_at": "2021-03-06T22:04:20Z",
+        "updated_at": "2021-04-06T15:16:05Z",
+        "closed_at": "2021-04-06T15:16:05Z",
+        "user": "axrj"
+    },
+    {
+        "number": 21,
+        "title": "Compilation to circuits?",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/21",
+        "description": "I have been very excited to compile my silq experiments and run on the built-in simulator. In the interest of broadening to other simulators, I wonder if there has been any work on compiling to formats such as QASM or other circuit notation formats?\r\n\r\nI think even the ability to compile to a non-standard output format (perhaps just a list of operations) would be extremely cool.\r\n\r\nAmazing language!!",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2021-03-06T00:17:15Z",
+        "updated_at": "2021-04-06T15:17:41Z",
+        "closed_at": null,
+        "user": "j6k4m8"
+    },
+    {
+        "number": 20,
+        "title": "build fails on AArch64 (A64FX), Fedora 33 ",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/20",
+        "description": "... because it is made for x86-64 only? ",
+        "labels": [],
+        "created_at": "2021-03-04T14:32:39Z",
+        "updated_at": "2021-04-07T07:05:16Z",
+        "closed_at": null,
+        "user": "LutzWeischerFujitsu"
+    },
+    {
+        "number": 19,
+        "title": "Constructing an array of parametrized length",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/19",
+        "description": "Excited to share what I suspect is my silly mistake with you :)\r\n\r\n> ### Background\r\n> I want to compute the function <img src=\"https://render.githubusercontent.com/render/math?math=x_0\\oplus(x_1 \\times x_2 \\times ... \\times x_n)\">; \r\n> \r\n> in other words, `x0 XOR (x1 AND x2 AND ... AND xn)`\r\n>\r\n> My approach to do this is to first construct an array of length n-1, and then use [something like this function](https://github.com/eth-sri/silq/pull/8#issuecomment-657742646) to construct the `all` of that array.\r\n\r\n\r\n### My challenge: \r\nI am trying to construct an array inside a parametrized function, like so:\r\n\r\n```C\r\ndef x1_xor_xn[n: !ℕ](input: uint[n]) {\r\n    \r\n    xn := 0:𝔹^(n-1);\r\n\r\n    ...\r\n}\r\n```\r\n\r\nBut it doesn't seem I can construct new primitives with my parameter `n` even though I define it to be of classical-ℕ type:\r\n\r\n```C\r\n❌ vector length should be of type !ℕ, not !ℤ\r\n```\r\n\r\nLikewise, constructing an int array fails:\r\n\r\n```C\r\nxn := 0:uint[n-1]; // ❌ expected argument types !ℕ, but !ℤ was provided\r\n```\r\n\r\nAnd so does this silliness:\r\n\r\n```C\r\nxn := 0:𝔹^((n-(1 as !ℕ)) as !ℕ);\r\n// or:\r\nxn := 0:uint[max(1, n-1) as !ℕ];\r\n```\r\n\r\nIt appears that `1` is interpreted as `!ℤ` and nothing I do can convince the compiler that I actually mean `!ℕ`, perhaps because ℕ-ℕ→ℤ...\r\n\r\n**What is the correct way to construct something like this? Is this possible in silq right now? (Is there some magical way to parametrize the `n` type?)**",
+        "labels": [],
+        "created_at": "2020-12-19T21:54:24Z",
+        "updated_at": "2020-12-21T17:30:22Z",
+        "closed_at": "2020-12-21T01:40:10Z",
+        "user": "j6k4m8"
+    },
+    {
+        "number": 18,
+        "title": "Module imports",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/18",
+        "description": "Hi team! \r\n\r\nI'm curious if there has been any discussion about code packaging or library design, or, more generally, file imports:\r\n\r\n```D\r\nimport foo from \"foo.slq\"\r\n\r\ndef main() {\r\n    return foo(...)\r\n}\r\n```\r\n\r\nRight now, I run a simple script that replaces \"`import X`\" in my files with the contents of file `X` in that directory. Hacky, but helps with organization, and centralizing commonly-used util functions. But of course this is a poor substitute for real imports, and means that there's no good type-checking until runtime!\r\n",
+        "labels": [],
+        "created_at": "2020-11-26T01:59:24Z",
+        "updated_at": "2020-11-26T02:35:54Z",
+        "closed_at": "2020-11-26T02:35:32Z",
+        "user": "j6k4m8"
+    },
+    {
+        "number": 17,
+        "title": "Silq REPL",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/17",
+        "description": "I think it'd be great to have a repl for the language, for toying with code before writing it down. Shouldn't be too hard to implement (not too sure). Thoughts?",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2020-10-12T07:35:15Z",
+        "updated_at": "2021-04-06T15:19:54Z",
+        "closed_at": null,
+        "user": "ode"
+    },
+    {
+        "number": 16,
+        "title": "Error upon creating new files in vscode, can't use silq.",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/16",
+        "description": "As soon as I create a new `.slq` file, this error pops up in the **OUTPUT** window:\r\n```\r\nERROR:\r\ndyld: lazy symbol binding failed: Symbol not found: _dyld_enumerate_tlv_storage\r\n  Referenced from: /Users/foxtrot/.vscode/extensions/eth-sri.vscode-silq-0.0.28/bin/silq-osx\r\n  Expected in: /usr/lib/libSystem.B.dylib\r\n\r\ndyld: Symbol not found: _dyld_enumerate_tlv_storage\r\n  Referenced from: /Users/foxtrot/.vscode/extensions/eth-sri.vscode-silq-0.0.28/bin/silq-osx\r\n  Expected in: /usr/lib/libSystem.B.dylib\r\n```\r\nI installed these three extensions: `eth-sri.vscode-silq` (v0.0.28), `mamoruds.silqmft-vscode` (v0.0.3) and `freebroccolo.input-assist` (v0.0.7), currently running on Visual Studio Code 1.48.1 on macOS Catalina 10.15.6. I installed Apple's own Command Line tools (`xcode-select --install`) without downloading Xcode.\r\nThis happens every time with any file of this type, thus I've not been able to run any silq code so far. Is there any fix?",
+        "labels": [],
+        "created_at": "2020-08-22T09:01:11Z",
+        "updated_at": "2020-08-22T22:24:22Z",
+        "closed_at": "2020-08-22T14:10:45Z",
+        "user": "ghost"
+    },
+    {
+        "number": 15,
+        "title": "Cann't run silq in vscode",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/15",
+        "description": "I already installed the two packages that is necessary and add silq in json file but every time i run silq code it says that code language is not supported or defined. plz, Se those picture\r\n\r\n![pack](https://user-images.githubusercontent.com/69731170/90676457-daed5e00-e27d-11ea-920f-71c82a724bdc.PNG)\r\n![json](https://user-images.githubusercontent.com/69731170/90676483-e6d92000-e27d-11ea-9fd0-bee8f8a84c4a.PNG)\r\n\r\n",
+        "labels": [],
+        "created_at": "2020-08-19T18:42:58Z",
+        "updated_at": "2020-10-12T10:25:06Z",
+        "closed_at": "2020-10-12T10:17:55Z",
+        "user": "usj-django-dev"
+    },
+    {
+        "number": 14,
+        "title": "Small error in the documentation?",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/14",
+        "description": "[Here](https://silq.ethz.ch/documentation#/documentation/7_symbols) in the Unicode table it says to type out 𝔹 for 𝔹 which isn't much help. I think, it should say \\bb because that works.",
+        "labels": [],
+        "created_at": "2020-08-09T12:31:56Z",
+        "updated_at": "2020-08-10T11:37:04Z",
+        "closed_at": "2020-08-10T11:37:04Z",
+        "user": "programizer"
+    },
+    {
+        "number": 13,
+        "title": "Update README.md",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/pull/13",
+        "description": "I have created and committed a FreeBSD \"port\" of silq on 2020-06-18.\r\n\r\nBinary packages for amd64 are automatically built and distributed to package mirrors within a few days whenever the port is updated in the FreeBSD ports repository.\r\nThe port is maintained and updated by me - I'm checking the eth-sri/silq repository for significant updates (and receive repo mails e.g. regarding pull requests).\r\n\r\nI'd appreciate if there were tags for \"stable\" versions of silq (and perhaps matching tags for utils and ast) to refer to in Github check-outs, but for now I'm using git hashes to refer to the respective revisions to be used in the FreeBSD port or package and add the date of the last git commit as a substitute of a revision number.\r\n\r\nI'm currently waiting for the merge of Shor's algorithm and will then update the FreeBSD port to that revision ...",
+        "labels": [],
+        "created_at": "2020-07-31T13:02:21Z",
+        "updated_at": "2020-08-01T13:25:47Z",
+        "closed_at": "2020-08-01T13:25:47Z",
+        "user": "stesser"
+    },
+    {
+        "number": 12,
+        "title": "Added Shor's factoring algorithm example",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/pull/12",
+        "description": "Hey @tgehr, this is an example of Shor's factoring algorithm in SILQ. Hoping this gets merged with the main repo.\r\n\r\nRegards\r\nAbeer",
+        "labels": [],
+        "created_at": "2020-07-27T09:27:29Z",
+        "updated_at": "2020-09-18T09:47:53Z",
+        "closed_at": "2020-09-18T09:47:53Z",
+        "user": "AbeerVaishnav13"
+    },
+    {
+        "number": 11,
+        "title": "Added teleportation example",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/pull/11",
+        "description": "Hey @tgehr ,\r\nSilq is a really great language and I'm really addicted to it now (haven't used qiskit or Cirq for 3 weeks straight).\r\n\r\nAdded an example for Quantum Teleportation over multiple message qubits. Hope this gets merged :)\r\n\r\nThanks\r\nAbeer",
+        "labels": [],
+        "created_at": "2020-07-22T08:11:01Z",
+        "updated_at": "2020-07-31T20:31:46Z",
+        "closed_at": "2020-07-22T17:05:08Z",
+        "user": "AbeerVaishnav13"
+    },
+    {
+        "number": 10,
+        "title": "Unable to run silq after setting $PATH",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/10",
+        "description": "I tried installing silq from source and it installed just fine. I'm able to run using `./silq` when I'm in the corresponding directory. However, I'm facing an issue when addin silq to my `$PATH`. I did it the way as suggested on the website. \r\n\r\nNow when I'm running silq from any directory, I get the following error: (I'm running zsh)\r\n```\r\nzsh: permission denied: silq\r\n```\r\nWhen I switch over to bash, I get the error:\r\n```\r\nbash: silq: command not found\r\n```",
+        "labels": [],
+        "created_at": "2020-07-16T16:28:22Z",
+        "updated_at": "2020-07-23T18:59:29Z",
+        "closed_at": "2020-07-17T15:26:08Z",
+        "user": "paniash"
+    },
+    {
+        "number": 9,
+        "title": "Building fails",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/9",
+        "description": "I am having the following error on Ubuntu while trying to build Silq \r\n`./build-release.sh: line 18: ldmd2: command not found`",
+        "labels": [],
+        "created_at": "2020-07-16T02:51:05Z",
+        "updated_at": "2020-07-16T16:40:19Z",
+        "closed_at": "2020-07-16T16:40:19Z",
+        "user": "Ayshine"
+    },
+    {
+        "number": 8,
+        "title": "Fix grover's search formula",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/pull/8",
+        "description": "Fixed the formula for calculating number of  iterations in grover's search algorithm.",
+        "labels": [],
+        "created_at": "2020-07-13T12:53:48Z",
+        "updated_at": "2020-07-13T19:36:17Z",
+        "closed_at": "2020-07-13T19:18:06Z",
+        "user": "AbeerVaishnav13"
+    },
+    {
+        "number": 7,
+        "title": "silq",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/7",
+        "description": "Linguagem de programação quantica",
+        "labels": [],
+        "created_at": "2020-07-09T23:13:10Z",
+        "updated_at": "2020-07-13T21:07:29Z",
+        "closed_at": "2020-07-13T21:07:29Z",
+        "user": "weslleymarcalf"
+    },
+    {
+        "number": 6,
+        "title": "fatal: remote error: upload-pack",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/6",
+        "description": "I can not executate `git submodule update` in 7331c54c4a3e76a80fba06bebecd4530576db799.\r\nI'm not sure It seems like https://github.com/tgehr/ast is not recently?\r\n\r\n```\r\n$ git submodule init && git submodule update                                   (1) (5s 921ms) \r\nfatal: remote error: upload-pack: not our ref cc55a893233c62f4f860127662ecee6d552cf4db\r\nFetched in submodule path 'ast', but it did not contain cc55a893233c62f4f860127662ecee6d552cf4db. Direct fetching of that commit failed.\r\n```\r\n\r\nThanks",
+        "labels": [],
+        "created_at": "2020-06-22T11:12:05Z",
+        "updated_at": "2020-06-22T15:04:39Z",
+        "closed_at": "2020-06-22T15:04:39Z",
+        "user": "eccyan"
+    },
+    {
+        "number": 5,
+        "title": "AssertError occured using the phase function and vector",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/5",
+        "description": "I guess this is an issue of type, but I can't isolate the problem between `phase` and `vector`.\r\n\r\n# Environments\r\nhttps://github.com/eccyan/silq-example/blob/master/tools/Dockerfile\r\n\r\n# Test codes\r\n```\r\ndef R (q:B, const k:!N) {\r\n    if q { phase(k * π) }\r\n    return q;\r\n}\r\n\r\ndef main(){\r\n  qs := vector(2, 0:B);\r\n  qs[0] := H(qs[0]);\r\n  qs[1] := R(qs[1], 1);\r\n  return qs;\r\n}\r\n```\r\n\r\n# Error messages\r\n```\r\ncore.exception.AssertError@qsim.d(442): Assertion failure\r\n----------------\r\n??:? _d_assert [0x7fada01fa73c]\r\n??:? [0x5d3202]\r\n??:? [0x5cd6b0]\r\n??:? [0x5cdc6c]\r\n??:? [0x5cdcf9]\r\n??:? [0x5cef0b]\r\n??:? [0x60d692]\r\n??:? [0x5cc202]\r\n??:? [0x5f01c1]\r\n??:? [0x5f9fc6]\r\n??:? [0x5fd3a6]\r\n??:? [0x60c890]\r\n??:? [0x5cc202]\r\n??:? [0x5ac4ae]\r\n??:? [0x5abedc]\r\n??:? [0x5ac8ce]\r\n??:? void rt.dmain2._d_run_main(int, char**, extern (C) int function(char[][])*).runAll() [0x7fada0224eef]\r\n??:? _d_run_main [0x7fada0224d07]\r\n??:? __libc_start_main [0x7fad9fe311a2]\r\n??:? [0x4c3f7d]\r\n```\r\n\r\nThanks.\r\n",
+        "labels": [],
+        "created_at": "2020-06-20T03:08:05Z",
+        "updated_at": "2020-06-21T15:54:37Z",
+        "closed_at": "2020-06-21T02:38:49Z",
+        "user": "eccyan"
+    },
+    {
+        "number": 4,
+        "title": "Cannot install silq on vscode 1.35.0",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/4",
+        "description": "Message from @sherlockguan, originally posted offtopic in another issue.\r\n> \r\n> dear team\r\n> I have some problems when installing silp on my vsocde linux computer .\r\n> _\r\n> \r\n> Unable to install 'eth-sri.vscode-silq' extension because it is not compatible with the current version of VS Code (version 1.35.0).\r\n> \r\n> _\r\n> Thank you for your efforts to make this new exciting language possible for Quantum computing .\r\n> Best Guan\r\n\r\nWe have not tested the plugin with any version lower than 1.37.0, the current version of VS code is 1.46. Is there a reason why you cannot upgrade?",
+        "labels": [],
+        "created_at": "2020-06-19T22:40:31Z",
+        "updated_at": "2020-10-12T10:18:47Z",
+        "closed_at": "2020-10-12T10:18:47Z",
+        "user": "tgehr"
+    },
+    {
+        "number": 3,
+        "title": "Dependency and Build File Error",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/3",
+        "description": "# Problem Statement\r\n\r\nHi Everyone, I am trying to install silq in macOS environment and I am facing issues with running the dependencies.sh and build.sh file. \r\n\r\n## Environment\r\n1. zsh shell\r\n2. bash shell\r\n\r\n## Error Image\r\n<img width=\"531\" alt=\"Screen Shot 2020-06-18 at 12 50 39 PM\" src=\"https://user-images.githubusercontent.com/56406734/84990508-d82d9a00-b162-11ea-9bc5-32780a82e8a0.png\">\r\n\r\nPlease guide me! 🙏 \r\n",
+        "labels": [],
+        "created_at": "2020-06-18T07:28:34Z",
+        "updated_at": "2020-06-18T19:53:45Z",
+        "closed_at": "2020-06-18T19:53:45Z",
+        "user": "vinamramunot-tech"
+    },
+    {
+        "number": 2,
+        "title": "Error message when I execute this comando ./ dependencies-release and build-release",
+        "state": "closed",
+        "url": "https://github.com/silq-lang/silq/issues/2",
+        "description": "After running ./dependencies-release.sh , I have this message , why?\r\nfatal: not a git repository (or any of the parent directories): .git\r\nfatal: not a git repository (or any of the parent directories): .git\r\n\r\nAfter running ./build-release.sh , I have this message , why?\r\nError: module * is in file 'ast/*.d' which cannot be read\r\nimport path[0] = /home/user/Downloads/silq-master/ldc2-1.18.0-linux-x86_64/bin/../import\r\n",
+        "labels": [],
+        "created_at": "2020-06-17T05:21:16Z",
+        "updated_at": "2020-06-17T06:39:43Z",
+        "closed_at": "2020-06-17T06:26:27Z",
+        "user": "marcosleandro9205"
+    },
+    {
+        "number": 1,
+        "title": "Bnf file",
+        "state": "open",
+        "url": "https://github.com/silq-lang/silq/issues/1",
+        "description": "Dear Team,\r\n\r\nis there a bnf-file (grammar file) for this language? \r\n\r\nWould appreciate to get one. Then I can start to write full Semantic IDE support. \r\n\r\nEven for 3rd party products like Sublime text. Based on language server. \r\n\r\nBest Flo",
+        "labels": [
+            "enhancement"
+        ],
+        "created_at": "2020-06-16T12:55:02Z",
+        "updated_at": "2021-04-06T15:20:12Z",
+        "closed_at": null,
+        "user": "florianpirchner"
+    }
+]

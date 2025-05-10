@@ -1,0 +1,12 @@
+
+# Analizador de JSON por palabras Claves
+
+Este programa se debe utilizar al descargar el dataset de common vulnerabilities and issues y cambiar solamente en la parte de el "__main__"
+
+Se debe cambiar la "ruta_base_cve : " por la que esten las carpetas en nuestro dispositivo
+
+
+## Screenshots
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1087472805379063940/1344400111710765136/image.png?ex=67c0c5ac&is=67bf742c&hm=87d68198cd18decb815dc8dbc4a008c2891c1321a621f2fdd7133d6d94fb9476&)
+
